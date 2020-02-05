@@ -2,7 +2,7 @@
 //
 //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 //                ██████    ██      ██   ██      ██   ██    ██                 ██                  ██████       ██      ██   ██████   ██████
 //              ██          ████  ████    ██    ██    ██   ██                ██████                ██    ██     ████  ████     ██           ██ 
 //              ██          ██  ██  ██      █  █      █████                 ████████               ██████       ██  ██  ██     ██     ██████
@@ -70,6 +70,7 @@ pulsedelay(SOURCE,DELAY)=>
 
 //                                                                              INPUTS
 //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+VIEWPOSITIONS           = input ( defval=false                                                  , type=bool                     , title="Overlay Mode"                     )
 RESOLUTION              = input ( defval=3      , minval=1                                      , type=integer                  , title="Resolution"                                )
 //                                                              SOURCE
 //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
@@ -126,7 +127,6 @@ STOPLOSS                = input ( defval=30     , minval=0      , maxval=100    
 
 
 
-VIEWPOSITIONS           = true // input ( defval=false                                                  , type=bool                     , title="Overlay Mode"                     )
 
 
 
@@ -615,64 +615,64 @@ plot                        ( VIEWPOSITIONS and CLOSE_ALERT         ? (close*1.5
 //                                                                              GRAPHICAL
 //
 //▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
-// //                                                                              RMI
-// //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-// //                                                              PLOT
-// //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-// RMI_ALPHA_PLOT          = plot  ( RMI_ALPHA_ON  and not  VIEWPOSITIONS  ? RMI_ALPHA : na                                                                        , transp=20     , color=M4A     , title='RMI Alpha'         , editable=true     )
+//                                                                              RMI
+//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+//                                                              PLOT
+//▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+RMI_ALPHA_PLOT          = plot  ( RMI_ALPHA_ON  and not  VIEWPOSITIONS  ? RMI_ALPHA : na                                                                        , transp=20     , color=M4A     , title='RMI Alpha'         , editable=true     )
 
-// RMI_BETA_PLOT           = plot  ( RMI_BETA_ON   and not  VIEWPOSITIONS  ? RMI_BETA  : na                                                                        , transp=10     , color=C4A     , title='RMI Beta'          , editable=true     )
+RMI_BETA_PLOT           = plot  ( RMI_BETA_ON   and not  VIEWPOSITIONS  ? RMI_BETA  : na                                                                        , transp=10     , color=C4A     , title='RMI Beta'          , editable=true     )
 
-// RMI_GAMMA_PLOT          = plot  ( RMI_GAMMA_ON  and not  VIEWPOSITIONS  ? RMI_GAMMA : na                                                                        , transp=00     , color=Y5A     , title='RMI Gamma'         , editable=true     )
+RMI_GAMMA_PLOT          = plot  ( RMI_GAMMA_ON  and not  VIEWPOSITIONS  ? RMI_GAMMA : na                                                                        , transp=00     , color=Y5A     , title='RMI Gamma'         , editable=true     )
     
-// //                                                              LINES
-// //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-// plot                    ( RMI_ALPHA_ON  and not  VIEWPOSITIONS  ? RMI_ALPHA_HIGH    : na                                                                        , transp=20     , color=M7B     , title='Alpha   High'      , editable=false    )
-// plot                    ( RMI_BETA_ON   and not  VIEWPOSITIONS  ? RMI_BETA_HIGH     : na                                                                        , transp=20     , color=C7A     , title='Beta High'         , editable=false    )
-// plot                    ( RMI_GAMMA_ON  and not  VIEWPOSITIONS  ? RMI_GAMMA_HIGH    : na                                                                        , transp=20     , color=Y8A     , title='Gamma   High'      , editable=false    )
+//                                                              LINES
+//▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+plot                    ( RMI_ALPHA_ON  and not  VIEWPOSITIONS  ? RMI_ALPHA_HIGH    : na                                                                        , transp=20     , color=M7B     , title='Alpha   High'      , editable=false    )
+plot                    ( RMI_BETA_ON   and not  VIEWPOSITIONS  ? RMI_BETA_HIGH     : na                                                                        , transp=20     , color=C7A     , title='Beta High'         , editable=false    )
+plot                    ( RMI_GAMMA_ON  and not  VIEWPOSITIONS  ? RMI_GAMMA_HIGH    : na                                                                        , transp=20     , color=Y8A     , title='Gamma   High'      , editable=false    )
     
-// hline                   ( RMI_NEUTRALITY_MAX                                                                                            , linestyle=dotted                      , color=K1A     , title='MAX NEUTRALITY'    , editable=false    )
-// hline                   ( 00                                                                                                            , linestyle=dotted                      , color=white   , title='Midline'           , editable=false    )
-// hline                   ( RMI_NEUTRALITY_MIN                                                                                            , linestyle=dotted                      , color=K1A     , title='MIN NEUTRALITY'    , editable=false    )
+hline                   ( RMI_NEUTRALITY_MAX                                                                                            , linestyle=dotted                      , color=K1A     , title='MAX NEUTRALITY'    , editable=false    )
+hline                   ( 00                                                                                                            , linestyle=dotted                      , color=white   , title='Midline'           , editable=false    )
+hline                   ( RMI_NEUTRALITY_MIN                                                                                            , linestyle=dotted                      , color=K1A     , title='MIN NEUTRALITY'    , editable=false    )
 
-// plot                    ( RMI_ALPHA_ON  and not  VIEWPOSITIONS  ? RMI_ALPHA_LOW     : na                                                                        , transp=20     , color=M7B     , title='Alpha   Low'       , editable=false    )
-// plot                    ( RMI_BETA_ON   and not  VIEWPOSITIONS  ? RMI_BETA_LOW      : na                                                                        , transp=20     , color=C7A     , title='Beta Low'          , editable=false    )
-// plot                    ( RMI_GAMMA_ON  and not  VIEWPOSITIONS  ? RMI_GAMMA_LOW     : na                                                                        , transp=20     , color=Y8A     , title='Gamma   Low'       , editable=false    )
+plot                    ( RMI_ALPHA_ON  and not  VIEWPOSITIONS  ? RMI_ALPHA_LOW     : na                                                                        , transp=20     , color=M7B     , title='Alpha   Low'       , editable=false    )
+plot                    ( RMI_BETA_ON   and not  VIEWPOSITIONS  ? RMI_BETA_LOW      : na                                                                        , transp=20     , color=C7A     , title='Beta Low'          , editable=false    )
+plot                    ( RMI_GAMMA_ON  and not  VIEWPOSITIONS  ? RMI_GAMMA_LOW     : na                                                                        , transp=20     , color=Y8A     , title='Gamma   Low'       , editable=false    )
 
-// //                                                              RMI FILL LINES
-// //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-// RMI_ALPHA_PLOT_HIGH     = plot  ( RMI_ALPHA >= RMI_ALPHA_HIGH   and RMI_ALPHA_ON    ? RMI_ALPHA_HIGH    : RMI_ALPHA_ON  ? RMI_ALPHA : na                        , transp=100    , color=M4A     , title='Alpha   Over  High', editable=false    )
-// RMI_BETA_PLOT_HIGH      = plot  ( RMI_BETA  >= RMI_BETA_HIGH    and RMI_BETA_ON     ? RMI_BETA_HIGH     : RMI_BETA_ON   ? RMI_BETA  : na                        , transp=100    , color=C5A     , title='Beta Over  High'   , editable=false    )
-// RMI_GAMMA_PLOT_HIGH     = plot  ( RMI_GAMMA >= RMI_GAMMA_HIGH   and RMI_GAMMA_ON    ? RMI_GAMMA_HIGH    : RMI_GAMMA_ON  ? RMI_GAMMA : na                        , transp=100    , color=Y6A     , title='Gamma   Over  High', editable=false    )
+//                                                              RMI FILL LINES
+//▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+RMI_ALPHA_PLOT_HIGH     = plot  ( RMI_ALPHA >= RMI_ALPHA_HIGH   and RMI_ALPHA_ON    ? RMI_ALPHA_HIGH    : RMI_ALPHA_ON  ? RMI_ALPHA : na                        , transp=100    , color=M4A     , title='Alpha   Over  High', editable=false    )
+RMI_BETA_PLOT_HIGH      = plot  ( RMI_BETA  >= RMI_BETA_HIGH    and RMI_BETA_ON     ? RMI_BETA_HIGH     : RMI_BETA_ON   ? RMI_BETA  : na                        , transp=100    , color=C5A     , title='Beta Over  High'   , editable=false    )
+RMI_GAMMA_PLOT_HIGH     = plot  ( RMI_GAMMA >= RMI_GAMMA_HIGH   and RMI_GAMMA_ON    ? RMI_GAMMA_HIGH    : RMI_GAMMA_ON  ? RMI_GAMMA : na                        , transp=100    , color=Y6A     , title='Gamma   Over  High', editable=false    )
 
-// RMI_ALPHA_PLOT_LOW      = plot  ( RMI_ALPHA <= RMI_ALPHA_LOW    and RMI_ALPHA_ON    ? RMI_ALPHA_LOW     : RMI_ALPHA_ON  ? RMI_ALPHA : na                        , transp=100    , color=M4A     , title='Alpha   Under Low' , editable=false    )
-// RMI_BETA_PLOT_LOW       = plot  ( RMI_BETA  <= RMI_BETA_LOW     and RMI_BETA_ON     ? RMI_BETA_LOW      : RMI_BETA_ON   ? RMI_BETA  : na                        , transp=100    , color=C5A     , title='Beta Under Low'    , editable=false    )
-// RMI_GAMMA_PLOT_LOW      = plot  ( RMI_GAMMA <= RMI_GAMMA_LOW    and RMI_GAMMA_ON    ? RMI_GAMMA_LOW     : RMI_GAMMA_ON  ? RMI_GAMMA : na                        , transp=100    , color=Y6A     , title='SLow   Under Low'  , editable=false    )
+RMI_ALPHA_PLOT_LOW      = plot  ( RMI_ALPHA <= RMI_ALPHA_LOW    and RMI_ALPHA_ON    ? RMI_ALPHA_LOW     : RMI_ALPHA_ON  ? RMI_ALPHA : na                        , transp=100    , color=M4A     , title='Alpha   Under Low' , editable=false    )
+RMI_BETA_PLOT_LOW       = plot  ( RMI_BETA  <= RMI_BETA_LOW     and RMI_BETA_ON     ? RMI_BETA_LOW      : RMI_BETA_ON   ? RMI_BETA  : na                        , transp=100    , color=C5A     , title='Beta Under Low'    , editable=false    )
+RMI_GAMMA_PLOT_LOW      = plot  ( RMI_GAMMA <= RMI_GAMMA_LOW    and RMI_GAMMA_ON    ? RMI_GAMMA_LOW     : RMI_GAMMA_ON  ? RMI_GAMMA : na                        , transp=100    , color=Y6A     , title='SLow   Under Low'  , editable=false    )
 
-// //                                                              RMI FILL
-// //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-// fill                    ( RMI_ALPHA_PLOT    , RMI_ALPHA_PLOT_HIGH                                                                                               , transp=30     , color=M7B     , title='Alpha   High Fill' , editable=false    )
-// fill                    ( RMI_ALPHA_PLOT    , RMI_ALPHA_PLOT_LOW                                                                                                , transp=30     , color=M7B     , title='Alpha   Low  Fill' , editable=false    )
+//                                                              RMI FILL
+//▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+fill                    ( RMI_ALPHA_PLOT    , RMI_ALPHA_PLOT_HIGH                                                                                               , transp=30     , color=M7B     , title='Alpha   High Fill' , editable=false    )
+fill                    ( RMI_ALPHA_PLOT    , RMI_ALPHA_PLOT_LOW                                                                                                , transp=30     , color=M7B     , title='Alpha   Low  Fill' , editable=false    )
 
-// fill                    ( RMI_BETA_PLOT     , RMI_BETA_PLOT_HIGH                                                                                                , transp=50     , color=C7B     , title='Beta High Fill'    , editable=false    )
-// fill                    ( RMI_BETA_PLOT     , RMI_BETA_PLOT_LOW                                                                                                 , transp=50     , color=C7B     , title='Beta Low  Fill'    , editable=false    )
+fill                    ( RMI_BETA_PLOT     , RMI_BETA_PLOT_HIGH                                                                                                , transp=50     , color=C7B     , title='Beta High Fill'    , editable=false    )
+fill                    ( RMI_BETA_PLOT     , RMI_BETA_PLOT_LOW                                                                                                 , transp=50     , color=C7B     , title='Beta Low  Fill'    , editable=false    )
 
-// fill                    ( RMI_GAMMA_PLOT    , RMI_GAMMA_PLOT_HIGH                                                                                               , transp=70     , color=Y7B     , title='Gamma   High Fill' , editable=false    )
-// fill                    ( RMI_GAMMA_PLOT    , RMI_GAMMA_PLOT_LOW                                                                                                , transp=70     , color=Y7B     , title='Gamma   Low  Fill' , editable=false    )
+fill                    ( RMI_GAMMA_PLOT    , RMI_GAMMA_PLOT_HIGH                                                                                               , transp=70     , color=Y7B     , title='Gamma   High Fill' , editable=false    )
+fill                    ( RMI_GAMMA_PLOT    , RMI_GAMMA_PLOT_LOW                                                                                                , transp=70     , color=Y7B     , title='Gamma   Low  Fill' , editable=false    )
 
-// //                                                             ARROWS
-// //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-// plotshape               ( RMI_TOP_3                                             , size=size.small   , style=shape.triangledown      , location=location.top     , transp=50     , color=Y6A     , title="RMI Top"           , editable=true     )
-// plotshape               ( RMI_DIP_3                                             , size=size.small   , style=shape.triangleup        , location=location.bottom  , transp=50     , color=C5A     , title="RMI Dip"           , editable=true     )
+//                                                             ARROWS
+//▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+plotshape               ( RMI_TOP_3                                             , size=size.small   , style=shape.triangledown      , location=location.top     , transp=50     , color=Y6A     , title="RMI Top"           , editable=true     )
+plotshape               ( RMI_DIP_3                                             , size=size.small   , style=shape.triangleup        , location=location.bottom  , transp=50     , color=C5A     , title="RMI Dip"           , editable=true     )
 
-// //                                                             ENTRY ARROWS
-// //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-// plotshape               ( SHORT                                                 , size=size.normal  , style=shape.triangledown      , location=location.top     , transp=50     , color=Y6A     , title="RMI Top"           , editable=true     )
-// plotshape               ( LONG                                                  , size=size.normal  , style=shape.triangleup        , location=location.bottom  , transp=50     , color=C5A     , title="RMI Dip"           , editable=true     )
+//                                                             ENTRY ARROWS
+//▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+plotshape               ( SHORT                                                 , size=size.normal  , style=shape.triangledown      , location=location.top     , transp=50     , color=Y6A     , title="RMI Top"           , editable=true     )
+plotshape               ( LONG                                                  , size=size.normal  , style=shape.triangleup        , location=location.bottom  , transp=50     , color=C5A     , title="RMI Dip"           , editable=true     )
 
-// plotshape               ( SHORT_ALT                                             , size=size.large   , style=shape.triangledown      , location=location.top     , transp=50     , color=Y8A     , title="RMI Top Extra"     , editable=true     )
-// plotshape               ( LONG_ALT                                              , size=size.large   , style=shape.triangleup        , location=location.bottom  , transp=50     , color=C7A     , title="RMI Dip Extra"     , editable=true     )
-//                                                              SPECIFIC ARROWS
+plotshape               ( SHORT_ALT                                             , size=size.large   , style=shape.triangledown      , location=location.top     , transp=50     , color=Y8A     , title="RMI Top Extra"     , editable=true     )
+plotshape               ( LONG_ALT                                              , size=size.large   , style=shape.triangleup        , location=location.bottom  , transp=50     , color=C7A     , title="RMI Dip Extra"     , editable=true     )
+//                                                           SPECIFIC ARROWS
 //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
 //                      SHORTS
 //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -711,31 +711,31 @@ plotshape               ( STOPLOSS_LONG                     , text="STOPLOSS LON
 plotshape               ( CLOSE_ALERT                       , text="CLOSE POSITIONS"    , size=size.normal  , style=shape.xcross    , location=location.top     , transp=00     , color=white   , title="CLOSE POSITIONS"   , editable=false    )
 
 
-//                                                              PLOT POSITIONS
-//▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
-//                      SHORTS
-//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_A           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT A"           , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_B           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT B"           , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_C           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT C"           , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_D           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT D"           , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_E           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT E"           , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_F           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT F"           , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_G           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT G"           , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_H           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT H"           , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_SHORTS_I           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT I"           , editable=false    )
+// //                                                              PLOT POSITIONS
+// //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
+// //                      SHORTS
+// //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_A           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT A"           , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_B           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT B"           , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_C           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT C"           , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_D           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT D"           , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_E           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT E"           , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_F           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT F"           , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_G           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT G"           , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_H           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT H"           , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_SHORTS_I           : na                                                                                           , transp=00     , color=Y6A     , title="SHORT I"           , editable=false    )
         
-//                      LONGS
-//░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_A            : na                                                                                           , transp=00     , color=C5A     , title="LONG A"            , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_B            : na                                                                                           , transp=00     , color=C5A     , title="LONG B"            , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_C            : na                                                                                           , transp=00     , color=C5A     , title="LONG C"            , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_D            : na                                                                                           , transp=00     , color=C5A     , title="LONG D"            , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_E            : na                                                                                           , transp=00     , color=C5A     , title="LONG E"            , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_F            : na                                                                                           , transp=00     , color=C5A     , title="LONG F"            , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_G            : na                                                                                           , transp=00     , color=C5A     , title="LONG G"            , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_H            : na                                                                                           , transp=00     , color=C5A     , title="LONG H"            , editable=false    )
-plot                    ( VIEWPOSITIONS ? PYR_LONGS_I            : na                                                                                           , transp=00     , color=C5A     , title="LONG I"            , editable=false    )
+// //                      LONGS
+// //░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_A            : na                                                                                           , transp=00     , color=C5A     , title="LONG A"            , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_B            : na                                                                                           , transp=00     , color=C5A     , title="LONG B"            , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_C            : na                                                                                           , transp=00     , color=C5A     , title="LONG C"            , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_D            : na                                                                                           , transp=00     , color=C5A     , title="LONG D"            , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_E            : na                                                                                           , transp=00     , color=C5A     , title="LONG E"            , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_F            : na                                                                                           , transp=00     , color=C5A     , title="LONG F"            , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_G            : na                                                                                           , transp=00     , color=C5A     , title="LONG G"            , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_H            : na                                                                                           , transp=00     , color=C5A     , title="LONG H"            , editable=false    )
+// plot                    ( VIEWPOSITIONS ? PYR_LONGS_I            : na                                                                                           , transp=00     , color=C5A     , title="LONG I"            , editable=false    )
 
 //                                                              BLACKGROUND
 //▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒
